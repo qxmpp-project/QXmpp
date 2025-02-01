@@ -207,7 +207,7 @@ void ManagerPrivate::init()
 //
 // \return whether the initialization succeeded
 //
-bool ManagerPrivate::initGlobalContext()
+QXMPP_EXPORT bool ManagerPrivate::initGlobalContext()
 {
     // "q" is passed as the parameter "user_data" to functions called by
     // the OMEMO library when no explicit "user_data" is set for those
@@ -225,7 +225,7 @@ bool ManagerPrivate::initGlobalContext()
 //
 // \return whether the initialization succeeded
 //
-bool ManagerPrivate::initLocking()
+QXMPP_EXPORT bool ManagerPrivate::initLocking()
 {
     const auto lock = [](void *user_data) {
         const auto *manager = reinterpret_cast<Manager *>(user_data);
@@ -252,7 +252,7 @@ bool ManagerPrivate::initLocking()
 //
 // \return whether the initialization succeeded
 //
-bool ManagerPrivate::initCryptoProvider()
+QXMPP_EXPORT bool ManagerPrivate::initCryptoProvider()
 {
     cryptoProvider = createOmemoCryptoProvider(this);
 
